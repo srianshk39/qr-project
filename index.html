@@ -8,78 +8,95 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #0f2027;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    font-family: 'Poppins', sans-serif;
     color: white;
     text-align: center;
+    background: linear-gradient(-45deg, #1d2671, #c33764, #3a1c71, #ff512f);
+    background-size: 400% 400%;
+    animation: gradient 12s ease infinite;
+}
+
+@keyframes gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
 }
 
 .container {
-    padding: 30px 15px;
+    padding: 40px 20px;
 }
 
 h1 {
-    font-size: 46px;
+    font-size: 48px;
     margin-bottom: 30px;
+    letter-spacing: 1px;
 }
 
 .option-btn {
-    font-size: 34px;
+    font-size: 32px;
     padding: 22px 60px;
-    border-radius: 15px;
+    border-radius: 50px;
     border: none;
-    background: #ffcc00;
-    color: black;
+    background: rgba(255,255,255,0.25);
+    color: white;
     font-weight: bold;
     cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+}
+
+.option-btn:hover {
+    background: white;
+    color: #c33764;
+    transform: scale(1.1);
 }
 
 .card {
     margin-top: 40px;
-    background: rgba(255,255,255,0.12);
-    padding: 30px 20px;
-    border-radius: 20px;
     display: none;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    padding: 35px 25px;
+    border-radius: 25px;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 1s ease forwards;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    text-align: left;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
 }
 
 .card h2 {
-    font-size: 44px;
-    margin-bottom: 25px;
+    font-size: 42px;
+    margin-bottom: 20px;
 }
 
 .point {
     font-size: 26px;
     line-height: 1.7;
-    margin-bottom: 18px;
-    text-align: left;
+    margin-bottom: 15px;
 }
 
 iframe {
     width: 100%;
-    height: 320px;
-    margin-top: 25px;
-    border-radius: 15px;
+    height: 350px;
+    border-radius: 18px;
     border: none;
+    margin-top: 25px;
 }
 
-/* EXTRA BIG FOR SMALL PHONES */
+/* MOBILE OPTIMIZATION */
 @media (max-width: 600px) {
-    h1 {
-        font-size: 42px;
-    }
-
-    .option-btn {
-        font-size: 32px;
-    }
-
-    .card h2 {
-        font-size: 40px;
-    }
-
-    .point {
-        font-size: 24px;
-    }
+    h1 { font-size: 40px; }
+    .option-btn { font-size: 28px; padding: 18px 45px; }
+    .card h2 { font-size: 36px; }
+    .point { font-size: 22px; }
+    iframe { height: 250px; }
 }
 </style>
 </head>
@@ -94,16 +111,14 @@ iframe {
     <div class="card" id="info">
         <h2>Uttar Karnataka</h2>
 
-        <div class="point">• Uttar Karnataka is the northern region of the state of Karnataka in India.</div>
-        <div class="point">• It is famous for its rich history, ancient temples, and unique cultural traditions.</div>
-        <div class="point">• Major districts include Belagavi, Hubballi, Dharwad, Ballari, and Vijayapura.</div>
-        <div class="point">• The region has important historical monuments like Badami, Aihole, and Pattadakal.</div>
-        <div class="point">• Kannada is the main language spoken, along with regional dialects.</div>
-        <div class="point">• Agriculture and industries play an important role in the economy of Uttar Karnataka.</div>
+        <div class="point">• Northern region of Karnataka, India.</div>
+        <div class="point">• Known for rich history, ancient temples & vibrant culture.</div>
+        <div class="point">• Includes Belagavi, Hubballi, Dharwad, Ballari, Vijayapura districts.</div>
+        <div class="point">• Famous historical monuments: Badami, Aihole, Pattadakal.</div>
+        <div class="point">• Kannada is the main language with regional dialects.</div>
+        <div class="point">• Agriculture and industries are important for the economy.</div>
 
-        <iframe 
-            src="https://www.google.com/maps?q=Uttara%20Karnataka&output=embed">
-        </iframe>
+        <iframe src="https://www.google.com/maps?q=Uttara%20Karnataka&output=embed"></iframe>
     </div>
 </div>
 
@@ -115,6 +130,7 @@ function showInfo() {
 
 </body>
 </html>
+
 
 
 
