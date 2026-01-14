@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Option Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #content {
+            margin-top: 20px;
+        }
+        iframe {
+            width: 90%;
+            height: 350px;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Select an Option</h2>
+
+    <button onclick="show8B()">8-B</button>
+
+    <div id="content"></div>
+
+    <script>
+        function show8B() {
+            document.getElementById("content").innerHTML = `
+                <h3>Uttar Karnataka</h3>
+                <p>Uttar Karnataka is the northern region of Karnataka state in India.</p>
+
+                <iframe 
+                    src="https://www.google.com/maps?q=Uttar%20Karnataka&output=embed">
+                </iframe>
+            `;
+        }
+    </script>
+
+</body>
+</html>
